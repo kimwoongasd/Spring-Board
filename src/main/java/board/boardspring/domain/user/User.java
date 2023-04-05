@@ -34,14 +34,19 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
+    // 비밀번호 안호화
     public void setPassword(String password) {
         this.password = password;
     }
 
+    // 권한 메소드
     public String getRoleKey(){
         return this.role.getKey();
     }
 
+    // 회원수정 메소드
+    public void update(String password, String nickname) {
+        this.password = password;
+        this.nickname = nickname;
+    }
 }
-
-
