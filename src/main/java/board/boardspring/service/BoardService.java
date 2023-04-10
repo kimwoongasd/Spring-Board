@@ -43,4 +43,10 @@ public class BoardService {
         board.update(boardUpdateRequestDto.getTitle(), boardUpdateRequestDto.getContent());
         return id;
     }
+
+    @Transactional
+    public int updateCount(Long id) {
+        return boardRepository.updateCount(id);
+    }
+
 }
